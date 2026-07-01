@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>FruitLease — Rent a Fruit Tree, Keep the Harvest</title>
+  <meta name="description" content="FruitLease is a marketplace to rent a neighbour's fruit, olive or nut tree and keep the harvest — citrus, apple, stone fruit, olive, fig and nuts. Browse trees near you on the map and book a season." />
+  <meta name="theme-color" content="#1f5135" />
+  <link rel="canonical" href="https://fruitlease.com/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FruitLease" />
+  <meta property="og:title" content="FruitLease — Rent a Fruit Tree, Keep the Harvest" />
+  <meta property="og:description" content="Rent a neighbour's fruit, olive or nut tree and keep the harvest. Browse trees near you on the map and book by the season." />
+  <meta property="og:url" content="https://fruitlease.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FruitLease — Rent a Fruit Tree, Keep the Harvest" />
+  <meta name="twitter:description" content="Rent a neighbour's fruit, olive or nut tree and keep the harvest." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Leaflet (map) CSS before app CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "FruitLease",
+        "url": "https://fruitlease.com/",
+        "description": "A marketplace to rent a neighbour's fruit, olive or nut tree and keep the harvest."
+      },
+      {
+        "@type": "Organization",
+        "name": "FruitLease",
+        "url": "https://fruitlease.com/",
+        "slogan": "Rent a tree, keep the harvest."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What can I rent on FruitLease?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Harvest-bearing trees only — citrus, apple and pear, stone fruit, berry, olive, fig and grape, and nut trees. You rent a grower's tree for the season and keep its harvest."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I book a tree?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Open a listing, pick your dates, and send a booking request to the grower. You will hear back to confirm availability."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div id="app" class="app-root" aria-busy="true">
+    <div class="boot-splash" role="status" aria-live="polite">
+      <span class="boot-leaf" aria-hidden="true"></span>
+      <p>Planting the orchard…</p>
+    </div>
+  </div>
+
+  <!-- App-level loader overlay (accessible) -->
+  <div id="app-loader" class="app-loader" role="status" aria-live="polite" aria-busy="false" hidden>
+    <div class="app-loader__card">
+      <span class="app-loader__spinner" aria-hidden="true"></span>
+      <span id="app-loader-text" class="app-loader__text">Working…</span>
+    </div>
+  </div>
+
+  <!-- Toast region -->
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Supabase + Leaflet libraries before app modules -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+  <!-- Runtime config first, then app modules in dependency order -->
+  <script src="data/supabaseConfig.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/globe.js"></script>
+  <script src="js/actions.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
