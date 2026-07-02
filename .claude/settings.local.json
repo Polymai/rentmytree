@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --check js/globe.js)",
+      "Bash(node POLYMAI_VISUAL_CHECK.cjs)",
+      "Bash(node \"c:/Users/svens/AppData/Local/Temp/claude/c--Users-svens-PolymaiProjects-app702/c9cfc4d9-aab4-49bf-b5ae-454737c82c2e/scratchpad/shot.cjs\")",
+      "Bash(node --check js/render.js)",
+      "Bash(node POLYMAI_APP_CONTRACT_CHECK.cjs)",
+      "Bash(node -e ' *)",
+      "Bash(node --check js/config.js)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('data/schema.json','utf8'\\)\\);console.log\\('schema json ok'\\)\")",
+      "Bash(node POLYMAI_SUPABASE_CONTRACT_CHECK.cjs)"
+    ]
+  }
+}
